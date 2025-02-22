@@ -10,7 +10,7 @@ from logging.config import fileConfig
 
 # Import your models and database configuration
 from bills.database import Base, URL_DATABASE
-from bills.models import Bill, User  # Import your models
+from bills.schemas import Bill, User  # Import your models
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
