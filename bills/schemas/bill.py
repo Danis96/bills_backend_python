@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional
 from enum import Enum
 from datetime import date
@@ -11,15 +11,11 @@ class BillType(str, Enum):
     BUILDING_MAINTENANCE = "ODRZAVANJE_ZGRADE"
 
 class BillBase(BaseModel):
-    id: int
     bill_type: BillType
-    amount: float
+    amount: float = Field(gt=0)
     date: date
     description: Optional[str] = None
-    paid: Optional[bool] = False
+    paid: bool = False
     user_id: int
 
-class UserBase(BaseModel):
-    id: int
-    username: str
-    email: str
+
