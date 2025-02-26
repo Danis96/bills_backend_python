@@ -22,3 +22,4 @@ class User(Base):
     id: Column[int] = Column(Integer, primary_key=True, index=True)
     username: Column[str] = Column(String(length=50), unique=True)
     email: Column[str] = Column(String(length=100), unique=True)
+    password: Column[str] = Column(String(length=255))

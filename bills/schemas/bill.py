@@ -17,5 +17,3 @@ class BillBase(BaseModel):
     description: Optional[str] = None
     paid: bool = False
     user_id: int
-
-
